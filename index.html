@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenas Legal Kazakhstan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Elenas Legal Kazakhstan</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Поиск по законодательству, судебной практике, разъяснениям...">
+                <button id="searchBtn">🔍</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Panel -->
+            <aside class="left-panel">
+                <nav class="nav-menu">
+                    <button class="nav-item active" data-section="laws">📚 Законодательство</button>
+                    <button class="nav-item" data-section="court">⚖️ Судебная практика</button>
+                    <button class="nav-item" data-section="explanations">📋 Разъяснения</button>
+                    <button class="nav-item" data-section="documents">📄 Документы</button>
+                    <button class="nav-item" data-section="favorites">⭐ Избранное</button>
+                    <button class="nav-item" data-section="settings">⚙️ Настройки</button>
+                </nav>
+            </aside>
+
+            <!-- Center Panel -->
+            <main class="center-panel">
+                <div id="content-area">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+            </main>
+
+            <!-- Right Panel -->
+            <aside class="right-panel">
+                <div class="panel-section">
+                    <h3>Связанные статьи</h3>
+                    <div id="related-articles" class="panel-content">
+                        <p class="empty-state">Выберите документ для просмотра связанных статей</p>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h3>Связанные дела</h3>
+                    <div id="related-cases" class="panel-content">
+                        <p class="empty-state">Выберите документ для просмотра связанных дел</p>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h3>Похожие документы</h3>
+                    <div id="similar-documents" class="panel-content">
+                        <p class="empty-state">Выберите документ для просмотра похожих документов</p>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h3>Последние изменения</h3>
+                    <div id="recent-changes" class="panel-content">
+                        <ul class="changes-list">
+                            <li><span class="change-date">2024-01-15</span> - Обновлен Трудовой кодекс</li>
+                            <li><span class="change-date">2024-01-10</span> - Добавлены новые разъяснения</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
