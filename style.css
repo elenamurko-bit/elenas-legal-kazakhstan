@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff9f43 0%, #636e72 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #f5f7fa;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #ff9f43 0%, #636e72 100%);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 500px;
+    width: 100%;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 0.75rem 1.25rem;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Left Panel */
+.left-panel {
+    width: 280px;
+    background: white;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.nav-item {
+    padding: 1rem 1.5rem;
+    border: none;
+    background: transparent;
+    text-align: left;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background: #f7fafc;
+}
+
+.nav-item.active {
+    background: #fff3e0;
+    border-left-color: #ff9f43;
+    color: #ff9f43;
+    font-weight: 600;
+}
+
+/* Center Panel */
+.center-panel {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background: #f5f7fa;
+}
+
+#content-area {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Right Panel */
+.right-panel {
+    width: 320px;
+    background: white;
+    border-left: 1px solid #e2e8f0;
+    overflow-y: auto;
+    padding: 1.5rem;
+}
+
+.panel-section {
+    margin-bottom: 2rem;
+}
+
+.panel-section h3 {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.panel-content {
+    min-height: 100px;
+}
+
+.empty-state {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.changes-list {
+    list-style: none;
+}
+
+.changes-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+}
+
+.change-date {
+    color: #ff9f43;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+/* Document Cards */
+.document-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.document-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.document-card h3 {
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.document-card .meta {
+    color: #718096;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.document-card .excerpt {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.document-card .tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #fff3e0;
+    color: #ff9f43;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* AI Analysis Section */
+.ai-analysis {
+    background: linear-gradient(135deg, #ff9f43 0%, #636e72 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.ai-analysis h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.questions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.question-btn {
+    padding: 1rem 1.5rem;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+}
+
+.question-btn:hover {
+    background: rgba(255,255,255,0.25);
+    border-color: rgba(255,255,255,0.5);
+    transform: translateY(-2px);
+}
+
+.question-btn:active {
+    transform: translateY(0);
+}
+
+.ai-result {
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    display: none;
+}
+
+.ai-result.active {
+    display: block;
+}
+
+.ai-result h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.ai-result .result-section {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.ai-result .result-section:last-child {
+    border-bottom: none;
+}
+
+.ai-result .result-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Settings Panel */
+.settings-panel {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.settings-panel h2 {
+    margin-bottom: 1.5rem;
+    color: #2d3748;
+}
+
+.settings-group {
+    margin-bottom: 2rem;
+}
+
+.settings-group h3 {
+    margin-bottom: 1rem;
+    color: #4a5568;
+    font-size: 1.1rem;
+}
+
+.settings-group button {
+    padding: 0.75rem 1.5rem;
+    background: #ff9f43;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: background 0.3s;
+}
+
+.settings-group button:hover {
+    background: #ee5a24;
+}
+
+.settings-group button.secondary {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.settings-group button.secondary:hover {
+    background: #cbd5e0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .right-panel {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .search-bar {
+        max-width: 100%;
+    }
+    
+    .left-panel {
+        width: 200px;
+    }
+    
+    .center-panel {
+        padding: 1rem;
+    }
+}
